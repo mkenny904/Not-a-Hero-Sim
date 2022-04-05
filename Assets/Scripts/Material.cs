@@ -4,32 +4,23 @@ using UnityEngine;
 
 public class Material : MonoBehaviour
 {
+    bool infinite = true;
+    public SceneControl.material materialtype;
     public int production_time_upgrade_level {get; private set;}
     public int production_upgrade_level {get; private set;}
-    public int number_of {get; private set;}
     public int production {get; private set;}
     public float production_time;
-    public int material;
     SceneControl control;
     void Start()
     {
-        print("starting");
         control = GameObject.Find("SceneControl").GetComponent<SceneControl>();
-        material = control.blueflower;
-        number_of = 0;
         production = 1;
         production_time = 10;
         production_upgrade_level = 1;
         production_time_upgrade_level = 1;
         StartCoroutine("Timer");
-        print("finished");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void BuyProductionUpgrade(double money)
     {
@@ -59,7 +50,6 @@ public class Material : MonoBehaviour
 
     private IEnumerator Timer()
     {
-        bool infinite = true;
         while(infinite==true)
         {
             float duration = production_time;
@@ -71,8 +61,8 @@ public class Material : MonoBehaviour
                 //var integer = (int)totalTime;
                 yield return null;
             }
-            material += production;
-            print(control.blueflower);
+            control.Add(((int)materialtype));
+            print(control.GetMaterial(((int)materialtype)));
         }
     }
 }

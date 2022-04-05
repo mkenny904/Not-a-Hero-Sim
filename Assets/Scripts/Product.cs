@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Product : MonoBehaviour
 {
-    public int upgrade_cost;
+    bool infinite = true;
+    public SceneControl.product producttype;
+    public SceneControl.material material1;
+    public SceneControl.guildmaterial material2;
+    public SceneControl control;
     public int production_time_upgrade_level {get; private set;}
     public int production_upgrade_level {get; private set;}
-    public int number_of {get; private set;}
     public int production {get; private set;}
-    public int material1;
-    public int material2;
     public float production_time;
     // Start is called before the first frame update
     void Start()
     {
-        material1 = 0;
-        material2 = 0;
-        number_of = 0;
+        control = GameObject.Find("SceneControl").GetComponent<SceneControl>();
         production = 1;
         production_time = 10;
         production_upgrade_level = 1;
@@ -29,15 +28,6 @@ public class Product : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public double GetProduct(){
-        if(number_of<1)
-        {
-            return 0;
-        }
-        number_of -= 1;
-        return 1;
     }
 
     public void BuyProductionUpgrade(double money)
@@ -68,21 +58,27 @@ public class Product : MonoBehaviour
 
     private IEnumerator Timer()
     {
-      float duration = production_time;
-      float totalTime = 0;
-      if(material1>0 && material2>0)
-      {
-          material1--;
-          material2--;
-        while(totalTime <= duration)
+        while(infinite==true)
         {
-            totalTime += Time.deltaTime;
-            //To assign timer visually
-            //var integer = (int)totalTime;
-            yield return null;
+            float duration = production_time;
+            float totalTime = 0;
+            if(control.GetMaterial(((int)material1)) > 0 && control.GetMaterial(((int)material2)) > 0)
+            {
+                control.UseMaterial(((int)material1));
+                control.UseMaterial(((int)material2));
+                while(totalTime <= duration)
+                {
+                    totalTime += Time.deltaTime;
+                    //To assign timer visually
+                    //var integer = (int)totalTime;
+                    yield return null;
+                }
+                for(int i = 0; i < production; i++)
+                {
+                    control.Add(((int)producttype));
+                }
+            }
         }
-        number_of += production;
-      }
     }
 
 }
