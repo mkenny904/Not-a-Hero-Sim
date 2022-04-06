@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 119686bec46b8454697f389c7a3417d9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthBuilding: {fileID: 7527948576663101383, guid: a115614957a8b6246b2ace69d227b2a4, type: 3}
+  - manaBuilding: {fileID: 5912308190252380215, guid: 167f19c9717c6fc42a7e2ad593780be7, type: 3}
+  - staminaBuilding: {fileID: 421003888763731820, guid: b462c6b9502d6e1448b5220771485f44, type: 3}
+  - crackedManaStone: {fileID: 8823027356630617226, guid: bcaa060e071b46546826e3e50e72f8ae, type: 3}
+  - questhall: {fileID: 5953576373826221911, guid: f29ed45f8360de242b2e36c6d564cbb9, type: 3}
+  - merchant: {fileID: 3731681004074650255, guid: 0ba1f2bbdb5ff244e8398fc133546884, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
