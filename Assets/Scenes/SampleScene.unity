@@ -753,7 +753,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
         m_MethodName: UpgradeSB
         m_Mode: 1
@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
         m_MethodName: UpgradeMB
         m_Mode: 1
@@ -1959,13 +1959,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
-        m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
-        m_MethodName: BuildCrackedManaStone
-        m_Mode: 1
+      - m_Target: {fileID: 870818410}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyBuilding
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1892606770}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2335,13 +2335,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
-        m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
-        m_MethodName: BuildHealthBuilding
-        m_Mode: 1
+      - m_Target: {fileID: 870818410}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyBuilding
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1122668560}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2467,13 +2467,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
-        m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
-        m_MethodName: BuildQuesthall
-        m_Mode: 1
+      - m_Target: {fileID: 870818410}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyBuilding
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1931850457}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2553,7 +2553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22000001, y: 0.031481482}
   m_AnchorMax: {x: 0.22000001, y: 0.031481482}
-  m_AnchoredPosition: {x: -94, y: -28}
+  m_AnchoredPosition: {x: -94, y: -27.999939}
   m_SizeDelta: {x: 206.5452, y: 56.68103}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &552911971
@@ -2905,7 +2905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
         m_MethodName: UpgradeCrystal
         m_Mode: 1
@@ -2964,7 +2964,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 636902121}
-  - component: {fileID: 636902122}
   m_Layer: 5
   m_Name: BuildButtons
   m_TagString: Untagged
@@ -2997,36 +2996,6 @@ RectTransform:
   m_AnchoredPosition: {x: 864.5, y: 158}
   m_SizeDelta: {x: 101, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &636902122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636902120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119686bec46b8454697f389c7a3417d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBuilding: {fileID: 1122668560}
-  manaBuilding: {fileID: 1038997099}
-  staminaBuilding: {fileID: 1063885291}
-  crackedManaStone: {fileID: 1892606770}
-  questhall: {fileID: 1931850457}
-  merchant: {fileID: 995771965}
-  cost: 10
-  debtlimit: 0
-  upgradeHB_Button: {fileID: 1724201181}
-  HBlevel: 1
-  upgradeMB_Button: {fileID: 0}
-  MBlevel: 1
-  upgradeSB_Button: {fileID: 0}
-  SBlevel: 1
-  upgradeCrystal_Button: {fileID: 0}
-  Clevel: 1
-  upgradeMerchant_Button: {fileID: 0}
-  Mlevel: 1
 --- !u!1 &675182061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,13 +3324,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
-        m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
-        m_MethodName: BuildManaBuilding
-        m_Mode: 1
+      - m_Target: {fileID: 870818410}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyBuilding
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1038997099}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3415,7 +3384,6 @@ GameObject:
   m_Component:
   - component: {fileID: 870818411}
   - component: {fileID: 870818410}
-  - component: {fileID: 870818412}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3435,6 +3403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5074a1992213144992e63d8e425aa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  building_cost: 10
   redflower_Display: {fileID: 174279301}
   blueflower_Display: {fileID: 1502253256}
   greenflower_Display: {fileID: 1335608344}
@@ -3443,6 +3412,7 @@ MonoBehaviour:
   manaPot_Display: {fileID: 1818789747}
   staminaPot_Display: {fileID: 475022823}
   gold_Display: {fileID: 1916109582}
+  control: {fileID: 2080396260}
 --- !u!4 &870818411
 Transform:
   m_ObjectHideFlags: 0
@@ -3457,18 +3427,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &870818412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870818409}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a669a11b59de77a419d431e0c40cef09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &871157377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +3923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995771966}
   - component: {fileID: 995771967}
+  - component: {fileID: 995771968}
   m_Layer: 0
   m_Name: Merchant
   m_TagString: Untagged
@@ -4025,7 +3984,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1069176689
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bbda6e5bc7fafa640a1a05a4e9a903b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4037,6 +3996,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &995771968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995771965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d374069abc597468d8007df75de6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  producttype: 6
+  control: {fileID: 2080396260}
+  sell_time: 0
+  buy_price: 10
 --- !u!1 &1038997099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,6 +4023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1038997100}
   - component: {fileID: 1038997101}
+  - component: {fileID: 1038997102}
   m_Layer: 0
   m_Name: ManaBuilding
   m_TagString: Untagged
@@ -4107,7 +4084,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1069176689
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 59e1cf94561da7b4f8bd89813a817542, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4119,6 +4096,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1038997102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038997099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5014bfbcb448e2d4aa83c7bfd1ef58b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  producttype: 8
+  material1: 2
+  material2: 5
+  control: {fileID: 2080396260}
+  production_time: 0
+  buy_price: 0
 --- !u!1 &1063885291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4129,6 +4124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063885292}
   - component: {fileID: 1063885293}
+  - component: {fileID: 1063885294}
   m_Layer: 0
   m_Name: StaminaBuilding
   m_TagString: Untagged
@@ -4189,7 +4185,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1069176689
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6f2c1a1d96cd5354a84b6e3178c778ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4201,6 +4197,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1063885294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063885291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5014bfbcb448e2d4aa83c7bfd1ef58b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  producttype: 7
+  material1: 2
+  material2: 4
+  control: {fileID: 2080396260}
+  production_time: 0
+  buy_price: 0
 --- !u!1 &1069563569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4411,6 +4425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122668561}
   - component: {fileID: 1122668562}
+  - component: {fileID: 1122668563}
   m_Layer: 0
   m_Name: Health Building
   m_TagString: Untagged
@@ -4471,7 +4486,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1069176689
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c7f6c718561c0e44d9cf1d357990d191, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4483,6 +4498,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1122668563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122668560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5014bfbcb448e2d4aa83c7bfd1ef58b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  producttype: 6
+  material1: 2
+  material2: 3
+  control: {fileID: 2080396260}
+  production_time: 0
+  buy_price: 0
 --- !u!1 &1257903535
 GameObject:
   m_ObjectHideFlags: 0
@@ -5164,7 +5197,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1476374914}
-  - component: {fileID: 1476374915}
   m_Layer: 0
   m_Name: build_Grid
   m_TagString: Untagged
@@ -5192,18 +5224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1476374915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476374913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c4d3bb73f9ee742a58a88fe9fe2ff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1502253254
 GameObject:
   m_ObjectHideFlags: 0
@@ -6066,7 +6086,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
         m_MethodName: UpgradeHB
         m_Mode: 1
@@ -6280,13 +6300,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
-        m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
-        m_MethodName: BuildStaminaBuilding
-        m_Mode: 1
+      - m_Target: {fileID: 870818410}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyBuilding
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1063885291}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6514,6 +6534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892606771}
   - component: {fileID: 1892606772}
+  - component: {fileID: 1892606773}
   m_Layer: 0
   m_Name: ManaCrystal
   m_TagString: Untagged
@@ -6574,7 +6595,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1069176689
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8266c48e09122124b8ac8f9f5ec36faa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6586,6 +6607,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1892606773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892606770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353bc2d606da3cf478323858bb89b307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialtype: 2
+  production_time: 0
+  buy_price: 10
+  control: {fileID: 2080396260}
 --- !u!1 &1898859767
 GameObject:
   m_ObjectHideFlags: 0
@@ -6707,7 +6744,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
         m_MethodName: UpgradeMerchant
         m_Mode: 1
@@ -6928,6 +6965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1931850458}
   - component: {fileID: 1931850459}
+  - component: {fileID: 1931850460}
   m_Layer: 0
   m_Name: QuestHall
   m_TagString: Untagged
@@ -6988,7 +7026,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1069176689
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 94638edf79dba994ea511c7c5cf92bc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7000,6 +7038,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1931850460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931850457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195a3e7a01cc144cb65a91bab9fdffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialtype: 3
+  wages: 0
+  adventure_speed: 0
+  speed_upgrade_cost: 0
+  adventurer_upgrade_cost: 0
+  upgrade_multiplier: 3
+  buy_price: 10
+  control: {fileID: 2080396260}
 --- !u!1 &1962753858
 GameObject:
   m_ObjectHideFlags: 0
@@ -7133,6 +7191,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962753858}
   m_CullTransparentMesh: 1
+--- !u!1 &2080396259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2080396261}
+  - component: {fileID: 2080396260}
+  m_Layer: 0
+  m_Name: SceneControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2080396260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080396259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01411421bba7ff44906ac083f13c05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 100
+  healthpotion: 0
+  staminapotion: 0
+  manapotion: 0
+  mana: 0
+  redflower: 0
+  greenflower: 0
+  blueflower: 0
+--- !u!4 &2080396261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080396259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 733.8212, y: 294.20102, z: -419.74725}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2087274056
 GameObject:
   m_ObjectHideFlags: 0
@@ -7297,13 +7406,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636902122}
-        m_TargetAssemblyTypeName: BuildButtons, Assembly-CSharp
-        m_MethodName: BuildMerchant
-        m_Mode: 1
+      - m_Target: {fileID: 870818410}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyBuilding
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 995771965}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

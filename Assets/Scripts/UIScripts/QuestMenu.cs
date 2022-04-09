@@ -7,7 +7,6 @@ public class QuestMenu : MonoBehaviour
 {
     public GameObject questMenu;
     public Button questMenuButton;
-    private BuildButtons bm;
 
     void Start(){
 
