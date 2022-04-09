@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guild_Hall : MonoBehaviour
+public class Guild_Hall : MonoBehaviour 
 {
     bool infinite = true;
     public SceneControl.guildmaterial materialtype;
