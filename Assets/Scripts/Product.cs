@@ -4,92 +4,81 @@ using UnityEngine;
 
 public class Product : MonoBehaviour
 {
-    public int shopcost;
-    public bool is_active {get; private set;}
-    public int upgrade_multiplier {get; private set;}
-    public int upgrade_cap {get; private set;}
-    public int number_of {get; private set;}
-    public int seller {get; private set;}
-    public int seller_upgrade_level {get; private set;}
-    public double seller_upgrade_multiplier {get; private set;}
-    public int seller_upgrade_cap {get; private set;}
-    public double cost;
-    public int upgrade_level {get; private set;}
-    public int seller_cost;
-    public int seller_upgrade_cost;
-    public int upgrade_cost;
-    public double production_time {get; private set;}
+    bool infinite = true;
+    public SceneControl.product producttype;
+    public SceneControl.material material1;
+    public SceneControl.guildmaterial material2;
+    [SerializeField] SceneControl control;
+    public int production_time_upgrade_level {get; private set;}
+    public int production_upgrade_level {get; private set;}
+    public int production {get; private set;}
+    public float production_time;
+    public int buy_price;
     // Start is called before the first frame update
     void Start()
     {
-        is_active = false;
-        upgrade_multiplier = 2;
-        upgrade_cap = 10;
-        number_of = 20;
-        seller = 0;
-        seller_upgrade_level = 0;
-        seller_upgrade_multiplier = .8;
-        seller_upgrade_cap = 10;
+        production = 1;
         production_time = 10;
+        production_upgrade_level = 1;
+        production_time_upgrade_level = 1;
+        StartCoroutine("Timer");
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void BuyProductionUpgrade()
     {
-        
-    }
-
-    public void BuyShop()
-    {
-        is_active = true;
-    }
-
-
-    public void BuySeller()
-    {
-        seller += 1;
-        cost *= seller;
-        seller_cost *= 10;
-
-    }
-
-    public double Sell(){
-        if(number_of < seller)
+        if(production_upgrade_level == 1)
         {
-            return 0;
-        }
-        //no products are added right now so this just stops the code that's here
-        //number_of -= seller;
-        return seller * cost;
-    }
-
-    public void BuyPriceUpgrade()
-    {
-        upgrade_cost *= 2;
-        cost *= 2;
-        upgrade_level += 1;
-        if(upgrade_level % upgrade_cap == 0)
+            production_upgrade_level = 2;
+            production = 2;
+        }else if(production_upgrade_level == 2)
         {
-            upgrade_cap *= 2;
-            cost *= upgrade_multiplier;
-            upgrade_multiplier *= 2;
+            production_upgrade_level = 3;
+            production = 3;
         }
     }
 
-    public void BuySellerUpgrade()
+    public void BuyProductionTimeUpgrade()
     {
-        seller_upgrade_cost *= 2;
-        production_time *=  0.95;
-        seller_upgrade_level += 1;
-        if(seller_upgrade_level % seller_upgrade_cap == 0)
+        if(production_time_upgrade_level == 1)
         {
-            seller_upgrade_cap *= 2;
-            production_time *= seller_upgrade_multiplier;
-            seller_upgrade_multiplier *= 2;
+            production_time_upgrade_level = 2;
+            production_time = 8;
+        }else if(production_time_upgrade_level == 2)
+        {
+            production_time_upgrade_level = 3;
+            production_time = 5;
         }
     }
 
+    private IEnumerator Timer()
+    {
+        while(infinite==true)
+        {
+            float duration = production_time;
+            float totalTime = 0;
+            while(totalTime <= duration)
+            {
+                totalTime += Time.deltaTime;
+                //To assign timer visually
+                //var integer = (int)totalTime;
+                yield return null;
+            }
+            Produce();
+        }
+    }
 
-
+    private void Produce()
+    {
+        for(int i = 0; i < production; i++)
+        {
+            if(control.GetMaterial(((int)material1)) && control.GetMaterial(((int)material2)))
+            {
+                control.UseMaterial(((int)material1));
+                control.UseMaterial(((int)material2));
+                control.Add(((int)producttype));
+            }
+        }
+    }
 
 }
