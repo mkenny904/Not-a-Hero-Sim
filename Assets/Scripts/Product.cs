@@ -5,48 +5,39 @@ using UnityEngine;
 public class Product : MonoBehaviour
 {
     bool infinite = true;
+    public int buy_price;
+    [SerializeField] SceneControl control;
+    public int upgrade_level = 1;
+    public int production = 1;
+    public float production_time = 0;
+    public int upgrade_cost;
+    public int upgrade_cost_increase;
     public SceneControl.product producttype;
     public SceneControl.material material1;
     public SceneControl.guildmaterial material2;
-    [SerializeField] SceneControl control;
-    public int production_time_upgrade_level {get; private set;}
-    public int production_upgrade_level {get; private set;}
-    public int production {get; private set;}
-    public float production_time;
-    public int buy_price;
+    
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        production = 1;
-        production_time = 10;
-        production_upgrade_level = 1;
-        production_time_upgrade_level = 1;
         StartCoroutine("Timer");
     }
 
 
-    public void BuyProductionUpgrade()
+    public void BuyUpgrade()
     {
-        if(production_upgrade_level == 1)
+        if(upgrade_level == 1 && control.Buy(upgrade_cost))
         {
-            production_upgrade_level = 2;
+            upgrade_cost += upgrade_cost_increase;
+            upgrade_level = 2;
             production = 2;
-        }else if(production_upgrade_level == 2)
-        {
-            production_upgrade_level = 3;
-            production = 3;
-        }
-    }
-
-    public void BuyProductionTimeUpgrade()
-    {
-        if(production_time_upgrade_level == 1)
-        {
-            production_time_upgrade_level = 2;
             production_time = 8;
-        }else if(production_time_upgrade_level == 2)
+        }else if(upgrade_level == 2 && control.Buy(upgrade_cost))
         {
-            production_time_upgrade_level = 3;
+            upgrade_level = 3;
+            production = 3;
             production_time = 5;
         }
     }

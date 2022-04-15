@@ -5,23 +5,21 @@ using UnityEngine;
 public class SceneControl : MonoBehaviour
 {
     //Holds amounts of everything and has some methods multiple classes use
-    public int money;
-    public int healthpotion;
-    public int staminapotion;
-    public int manapotion;
-    public int mana;
-    public int redflower;
-    public int greenflower;
-    public int blueflower;
+    public int money = 0;
+    public int healthpotion = 0;
+    public int staminapotion = 0;
+    public int manapotion = 0;
+    public int healthpotion_cost;
+    public int staminapotion_cost;
+    public int manapotion_cost;
+    public int mana = 0;
+    public int redflower = 0;
+    public int greenflower = 0;
+    public int blueflower = 0;
 
     void Start()
     {
-       healthpotion = 0;
-       staminapotion = 0;
-       manapotion = 0;
-       redflower = 0;
-       greenflower = 0; 
-       blueflower = 0;
+
     }
 
     public bool Buy(int price)
@@ -119,39 +117,28 @@ public class SceneControl : MonoBehaviour
     }
 
     //Checks if enough materials to sell
-    public bool Sell(int type)
+    public void Sell()
     {
-        switch (type)
+        if(healthpotion >= 1)
         {
-            case 6:
-                if(healthpotion >= 1)
-                {
-                    healthpotion--;
-                    return true;
-                }
-                break;
-            case 7:
-                if(staminapotion >= 1)
-                {
-                    staminapotion--;
-                    return true;
-                }
-                break;
-            case 8:
-                if(manapotion >= 1)
-                {
-                    manapotion--;
-                    return true;
-                }
-                break;
-            
+            healthpotion--;
+            Add(1, healthpotion_cost);
         }
-        return false;
+        if(staminapotion >= 1)
+        {
+            staminapotion--;
+            Add(1, staminapotion_cost);
+        }
+        if(manapotion >= 1)
+        {
+            manapotion--;
+            Add(1, manapotion_cost);
+        }
     }
 
-    public bool Upgrade(int cost)
+    public bool Sellable()
     {
-        if(money >= cost)
+        if(healthpotion >= 1 || staminapotion >= 1 || manapotion >= 1)
         {
             return true;
         }
@@ -163,12 +150,14 @@ public class SceneControl : MonoBehaviour
     {
         mana = 2
     }
+
     public enum guildmaterial
     {
         redflower = 3,
         greenflower = 4,
         blueflower = 5
     }
+
     public enum product
     {
         healthpotion = 6, 

@@ -4,49 +4,35 @@ using UnityEngine;
 
 public class Merchant : MonoBehaviour
 {
-    private bool infinite = true;
-    public int cost;
-    public SceneControl.product producttype;
-    [SerializeField] SceneControl control;
-    public int sell_time_upgrade_level {get; private set;}
-    public int sell_volume_upgrade_level {get; private set;}
-    public int sell_volume {get; private set;}
-    public float sell_time;
+    bool infinite = true;
     public int buy_price;
+    [SerializeField] SceneControl control;
+    public int upgrade_level = 1;
+    public int sell_volume = 1;
+    public int sell_time = 10;
+    public int upgrade_cost;
+    public int upgrade_cost_increase;
+    
     // Start is called before the first frame update
     void Start()
     {
-        sell_time_upgrade_level = 1;
-        sell_volume_upgrade_level = 1;
-        sell_time = 10;
-        sell_volume = 2;
-        StartCoroutine("Timer");
+
     }
 
 
-    public void BuySellTimeUpgrade()
+    public void BuyUpgrade()
     {
-        if(sell_time_upgrade_level == 1)
+        if(upgrade_level == 1 && control.Buy(upgrade_cost))
         {
-            sell_time_upgrade_level = 2;
-            sell_time = 2;
-        }else if(sell_time_upgrade_level == 2)
+            upgrade_cost += upgrade_cost_increase;
+            upgrade_level = 2;
+            sell_volume = 2;
+            sell_time = 8;
+        }else if(upgrade_level == 2 && control.Buy(upgrade_cost))
         {
-            sell_time_upgrade_level = 3;
-            sell_time = 3;
-        }
-    }
-
-    public void BuySellVolumeUpgrade()
-    {
-        if(sell_volume_upgrade_level == 1)
-        {
-            sell_volume_upgrade_level = 2;
-            sell_volume = 8;
-        }else if(sell_volume_upgrade_level == 2)
-        {
-            sell_volume_upgrade_level = 3;
-            sell_volume = 5;
+            upgrade_level = 3;
+            sell_volume = 3;
+            sell_time = 5;
         }
     }
 
@@ -54,28 +40,23 @@ public class Merchant : MonoBehaviour
     {
         while(infinite == true)
         {
-            float duration = sell_time;
-            float totalTime = 0;  
-            while(totalTime <= duration)
+            while(control.Sellable())
             {
-                totalTime += Time.deltaTime;
-                //To assign timer visually
-                //var integer = (int)totalTime;
-                yield return null;
+                float duration = sell_time;
+                float totalTime = 0;  
+                while(totalTime <= duration)
+                {
+                    totalTime += Time.deltaTime;
+                    //To assign timer visually
+                    //var integer = (int)totalTime;
+                    yield return null;
+                }
+                for(int i = 0; i < sell_volume; i++)
+                {
+                    control.Sell();
+                }
             }
-            Sell();
-        }
-    }
-
-    public void Sell()
-    {
-        for(int i = 0; i < sell_volume; i++)
-        {
-            if(control.Sell(((int)producttype)))
-            {
-            
-                control.Add(1, cost);
-            }
+            yield return new WaitForSeconds(1);
         }
     }
 
