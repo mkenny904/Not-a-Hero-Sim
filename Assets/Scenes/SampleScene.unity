@@ -4010,13 +4010,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d374069abc597468d8007df75de6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buy_price: 10
   control: {fileID: 2080396260}
   upgrade_level: 1
-  sell_volume: 1
-  sell_time: 10
-  upgrade_cost: 0
-  upgrade_cost_increase: 0
+  sell_volume: 5
+  sell_time: 15
 --- !u!1 &1038997099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4112,13 +4109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5014bfbcb448e2d4aa83c7bfd1ef58b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buy_price: 0
   control: {fileID: 2080396260}
   upgrade_level: 1
-  production: 1
-  production_time: 0
-  upgrade_cost: 0
-  upgrade_cost_increase: 0
+  production: 5
+  production_time: 15
   producttype: 8
   material1: 2
   material2: 5
@@ -4217,13 +4211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5014bfbcb448e2d4aa83c7bfd1ef58b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buy_price: 0
   control: {fileID: 2080396260}
   upgrade_level: 1
-  production: 1
-  production_time: 0
-  upgrade_cost: 0
-  upgrade_cost_increase: 0
+  production: 5
+  production_time: 15
   producttype: 7
   material1: 2
   material2: 4
@@ -4534,13 +4525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5014bfbcb448e2d4aa83c7bfd1ef58b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buy_price: 0
   control: {fileID: 2080396260}
   upgrade_level: 1
-  production: 1
-  production_time: 0
-  upgrade_cost: 0
-  upgrade_cost_increase: 0
+  production: 5
+  production_time: 15
   producttype: 6
   material1: 2
   material2: 3
@@ -6661,13 +6649,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353bc2d606da3cf478323858bb89b307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buy_price: 10
   control: {fileID: 2080396260}
   upgrade_level: 1
-  production: 1
-  production_time: 10
-  upgrade_cost: 0
-  upgrade_cost_increase: 0
+  production: 5
+  production_time: 15
   materialtype: 2
   sprite2: {fileID: 21300000, guid: 97943be2c877fd141b7bc6b9d0e6bf0d, type: 3}
   sprite3: {fileID: 21300000, guid: bb78d105ba58c994d94951283576ffce, type: 3}
@@ -7098,13 +7083,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b195a3e7a01cc144cb65a91bab9fdffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buy_price: 10
   control: {fileID: 2080396260}
   upgrade_level: 1
-  adventurer: 1
-  quest_speed: 10
-  upgrade_cost: 0
-  upgrade_cost_increase: 0
+  adventurer: 5
+  quest_speed: 15
   wages: 5
   materialtype: 3
 --- !u!1 &1962753858
@@ -7273,13 +7255,14 @@ MonoBehaviour:
   healthpotion: 0
   staminapotion: 0
   manapotion: 0
-  healthpotion_cost: 0
-  staminapotion_cost: 0
-  manapotion_cost: 0
+  potion_price: 2
   mana: 0
   redflower: 0
   greenflower: 0
   blueflower: 0
+  building_price: 10
+  upgrade_price: 20
+  upgrade_2_price: 40
 --- !u!4 &2080396261
 Transform:
   m_ObjectHideFlags: 0
