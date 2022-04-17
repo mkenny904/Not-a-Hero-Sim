@@ -5,14 +5,11 @@ using UnityEngine;
 public class Guild_Hall : MonoBehaviour 
 {
     bool infinite = true;
-    public int buy_price;
     [SerializeField] SceneControl control;
     public int upgrade_level = 1;
-    public int adventurer = 1;
-    public float quest_speed = 10;
-    public int upgrade_cost;
-    public int upgrade_cost_increase;
-    public int wages;
+    public int adventurer = 5;
+    public int quest_speed = 15;
+    public int wages = 5;
     public SceneControl.guildmaterial materialtype;
     
     void Start()
@@ -22,18 +19,7 @@ public class Guild_Hall : MonoBehaviour
 
     public void BuyUpgrade()
     {
-        if(upgrade_level == 1 && control.Buy(upgrade_cost))
-        {
-            upgrade_cost += upgrade_cost_increase;
-            upgrade_level = 2;
-            adventurer = 2;
-            quest_speed = 8;
-        }else if(upgrade_level == 2 && control.Buy(upgrade_cost))
-        {
-            upgrade_level = 3;
-            adventurer = 3;
-            quest_speed = 5;
-        }
+        control.BuyUpgrade(ref upgrade_level, ref quest_speed, ref adventurer);
     }
 
     private IEnumerator Timer()

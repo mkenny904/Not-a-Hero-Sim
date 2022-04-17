@@ -5,35 +5,21 @@ using UnityEngine;
 public class Merchant : MonoBehaviour
 {
     bool infinite = true;
-    public int buy_price;
     [SerializeField] SceneControl control;
     public int upgrade_level = 1;
-    public int sell_volume = 1;
-    public int sell_time = 10;
-    public int upgrade_cost;
-    public int upgrade_cost_increase;
+    public int sell_volume = 5;
+    public int sell_time = 15;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine("Timer");
     }
 
 
     public void BuyUpgrade()
     {
-        if(upgrade_level == 1 && control.Buy(upgrade_cost))
-        {
-            upgrade_cost += upgrade_cost_increase;
-            upgrade_level = 2;
-            sell_volume = 2;
-            sell_time = 8;
-        }else if(upgrade_level == 2 && control.Buy(upgrade_cost))
-        {
-            upgrade_level = 3;
-            sell_volume = 3;
-            sell_time = 5;
-        }
+        control.BuyUpgrade(ref upgrade_level, ref sell_time, ref sell_volume);
     }
 
     private IEnumerator Timer()

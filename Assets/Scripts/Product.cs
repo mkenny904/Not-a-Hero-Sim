@@ -5,13 +5,10 @@ using UnityEngine;
 public class Product : MonoBehaviour
 {
     bool infinite = true;
-    public int buy_price;
     [SerializeField] SceneControl control;
     public int upgrade_level = 1;
-    public int production = 1;
-    public float production_time = 0;
-    public int upgrade_cost;
-    public int upgrade_cost_increase;
+    public int production = 5;
+    public int production_time = 15;
     public SceneControl.product producttype;
     public SceneControl.material material1;
     public SceneControl.guildmaterial material2;
@@ -28,18 +25,7 @@ public class Product : MonoBehaviour
 
     public void BuyUpgrade()
     {
-        if(upgrade_level == 1 && control.Buy(upgrade_cost))
-        {
-            upgrade_cost += upgrade_cost_increase;
-            upgrade_level = 2;
-            production = 2;
-            production_time = 8;
-        }else if(upgrade_level == 2 && control.Buy(upgrade_cost))
-        {
-            upgrade_level = 3;
-            production = 3;
-            production_time = 5;
-        }
+        control.BuyUpgrade(ref upgrade_level, ref production_time, ref production);
     }
 
     private IEnumerator Timer()

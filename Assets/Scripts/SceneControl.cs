@@ -9,24 +9,53 @@ public class SceneControl : MonoBehaviour
     public int healthpotion = 0;
     public int staminapotion = 0;
     public int manapotion = 0;
-    public int healthpotion_cost;
-    public int staminapotion_cost;
-    public int manapotion_cost;
+    public int potion_price = 2;
     public int mana = 0;
     public int redflower = 0;
     public int greenflower = 0;
     public int blueflower = 0;
+    public int building_price = 10;
+    public int upgrade_price = 20;
+    public int upgrade_2_price = 40;
 
     void Start()
     {
 
     }
 
-    public bool Buy(int price)
+    public void BuyUpgrade(ref int upgrade_level, ref int speed, ref int amount)
     {
-        if(money >= price)
+        if(upgrade_level == 1 && money >= upgrade_price)
         {
-            money -= price;
+            upgrade_level = 2;
+            money -= upgrade_price;
+            speed = 10;
+            amount = 10;
+        }
+        else if(upgrade_level == 2 && money >= upgrade_2_price)
+        {
+            upgrade_level = 3;
+            money -= upgrade_2_price;
+            speed = 5;
+            amount = 15;
+        }
+    }
+
+    public bool Buy(int cost)
+    {
+        if(money >= cost)
+        {
+            money -= cost;
+            return true;
+        }
+        return false;
+    }
+
+    public bool BuyBuilding()
+    {
+        if(money >= building_price)
+        {
+            money -= building_price;
             return true;
         }
         return false;
@@ -88,9 +117,6 @@ public class SceneControl : MonoBehaviour
     {
         switch (type)
         {
-            case 1:
-                money += cost;
-                break;
             case 2:
                 mana++;
                 break;
@@ -119,21 +145,23 @@ public class SceneControl : MonoBehaviour
     //Checks if enough materials to sell
     public void Sell()
     {
+        int i = 0;
         if(healthpotion >= 1)
         {
             healthpotion--;
-            Add(1, healthpotion_cost);
+            i++;
         }
         if(staminapotion >= 1)
         {
             staminapotion--;
-            Add(1, staminapotion_cost);
+            i++;
         }
         if(manapotion >= 1)
         {
             manapotion--;
-            Add(1, manapotion_cost);
+            i++;
         }
+        money += (potion_price * i);
     }
 
     public bool Sellable()

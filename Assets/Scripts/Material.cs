@@ -5,14 +5,11 @@ using UnityEngine;
 public class Material : MonoBehaviour
 {
     bool infinite = true;
-    public int buy_price;
     [SerializeField] SceneControl control;
     
     public int upgrade_level = 1;
-    public int production = 1;
-    public float production_time = 10;
-    public int upgrade_cost;
-    public int upgrade_cost_increase;
+    public int production = 5;
+    public int production_time = 15;
     public SceneControl.material materialtype;
     public Sprite sprite2;
     public Sprite sprite3;
@@ -22,21 +19,15 @@ public class Material : MonoBehaviour
         StartCoroutine("Timer");
     }
 
-
     public void BuyUpgrade()
     {
-        if(upgrade_level == 1 && control.Buy(upgrade_cost))
+        control.BuyUpgrade(ref upgrade_level, ref production_time, ref production);
+        if(upgrade_level == 2)
         {
-            upgrade_cost += upgrade_cost_increase;
-            upgrade_level = 2;
-            production = 2;
-            production_time = 8;
             gameObject.GetComponent<SpriteRenderer>().sprite = sprite2;
-        }else if(upgrade_level == 2 && control.Buy(upgrade_cost))
+        }
+        if(upgrade_level == 3)
         {
-            upgrade_level = 3;
-            production = 3;
-            production_time = 5;
             gameObject.GetComponent<SpriteRenderer>().sprite = sprite3;
         }
     }
@@ -54,7 +45,10 @@ public class Material : MonoBehaviour
                 //var integer = (int)totalTime;
                 yield return null;
             }
-            control.Add(((int)materialtype));
+            for(int i = 0; i < production; i++)
+            {
+                control.Add(((int)materialtype));
+            }
         }
     }
 }
