@@ -419,7 +419,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 70789512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2080396262}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &70789512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3392,7 +3404,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 765228286}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2080396262}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &765228286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6230,9 +6254,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 160035462}
-        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 2080396262}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7570,6 +7594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080396261}
   - component: {fileID: 2080396260}
+  - component: {fileID: 2080396262}
   m_Layer: 0
   m_Name: SceneControl
   m_TagString: Untagged
@@ -7615,6 +7640,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2080396262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080396259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049537961b12d9f4bb5505114ceb170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 2080396260}
+  manacrystal: {fileID: 1892606773}
+  guild: {fileID: 1931850460}
+  health: {fileID: 1122668563}
+  stamina: {fileID: 1063885294}
+  mana: {fileID: 1038997102}
+  merchant: {fileID: 995771968}
+  manager: {fileID: 870818410}
+  manacrystal_building: {fileID: 1892606770}
+  guild_building: {fileID: 1931850457}
+  health_building: {fileID: 1122668560}
+  stamina_building: {fileID: 1063885291}
+  mana_building: {fileID: 1038997099}
+  merchant_building: {fileID: 995771965}
 --- !u!1 &2087274056
 GameObject:
   m_ObjectHideFlags: 0

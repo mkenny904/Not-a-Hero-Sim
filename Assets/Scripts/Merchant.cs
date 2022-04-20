@@ -21,6 +21,10 @@ public class Merchant : MonoBehaviour
     {
         control.BuyUpgrade(ref upgrade_level, ref sell_time, ref sell_volume);
     }
+    public void LoadUpgrade(int upgrade)
+    {
+        control.LoadUpgrade(upgrade, ref upgrade_level, ref sell_time, ref sell_volume);
+    }
 
     private IEnumerator Timer()
     {

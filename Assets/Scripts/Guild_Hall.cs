@@ -22,6 +22,11 @@ public class Guild_Hall : MonoBehaviour
         control.BuyUpgrade(ref upgrade_level, ref quest_speed, ref adventurer);
     }
 
+    public void LoadUpgrade(int upgrade)
+    {
+        control.LoadUpgrade(upgrade, ref upgrade_level, ref quest_speed, ref adventurer);
+    }
+
     private IEnumerator Timer()
     {
         float duration = quest_speed;
@@ -64,6 +69,5 @@ public class Guild_Hall : MonoBehaviour
     public void ChangeQuest(int material)
     {
         materialtype = (SceneControl.guildmaterial)material;
-        print(materialtype);
     }
 }
