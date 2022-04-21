@@ -57,4 +57,14 @@ public class GameManager : MonoBehaviour
             building.SetActive(true);
         }
     }
+
+    public bool LoadBuilding(bool bought, GameObject building)
+    {
+        if(!building.activeInHierarchy && bought)
+        {
+            building.SetActive(true);
+            return true;
+        }
+        return false;
+    }
 }

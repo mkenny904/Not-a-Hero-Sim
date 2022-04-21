@@ -41,6 +41,22 @@ public class SceneControl : MonoBehaviour
         }
     }
 
+    public void LoadUpgrade(int load_upgrade_level, ref int upgrade_level, ref int speed, ref int amount)
+    {
+        if(load_upgrade_level == 2)
+        {
+            upgrade_level = 2;
+            speed = 10;
+            amount = 10;
+        }
+        else if(load_upgrade_level == 3)
+        {
+            upgrade_level = 3;
+            speed = 5;
+            amount = 15;
+        }
+    }
+
     public bool Buy(int cost)
     {
         if(money >= cost)

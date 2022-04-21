@@ -22,10 +22,14 @@ public class Product : MonoBehaviour
         StartCoroutine("Timer");
     }
 
-
     public void BuyUpgrade()
     {
         control.BuyUpgrade(ref upgrade_level, ref production_time, ref production);
+    }
+
+    public void LoadUpgrade(int upgrade)
+    {
+        control.LoadUpgrade(upgrade, ref upgrade_level, ref production_time, ref production);
     }
 
     private IEnumerator Timer()
